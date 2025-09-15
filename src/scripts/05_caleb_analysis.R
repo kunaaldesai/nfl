@@ -59,9 +59,9 @@ caleb_pbp_week_2 <- pbp_25 %>%
     epa_roll5 = zoo::rollmean(epa, k = 5, fill = NA, align = "right")
   )
 
-caleb_opp <- caleb_pbp_week_1 %>% distinct(defteam) %>% pull(defteam) %>% paste(collapse = "/")
+caleb_opp_week_1 <- caleb_pbp_week_1 %>% distinct(defteam) %>% pull(defteam) %>% paste(collapse = "/")
 caleb_game_avg_epa_week_1 <- mean(caleb_pbp_week_1$epa, na.rm = TRUE)
-caleb_opp <- caleb_pbp_week_2 %>% distinct(defteam) %>% pull(defteam) %>% paste(collapse = "/")
+caleb_opp_week_2 <- caleb_pbp_week_2 %>% distinct(defteam) %>% pull(defteam) %>% paste(collapse = "/")
 caleb_game_avg_epa_week_2 <- mean(caleb_pbp_week_2$epa, na.rm = TRUE)
 
 # Label only the most impactful snaps (top-3 & bottom-3 EPA)

@@ -19,6 +19,10 @@ pbp_week_1 <- pbp_25 %>%
   group_by(id, name, posteam) %>%
   filter(week == 1)
 
+pbp_week_2 <- pbp_25 %>%
+  group_by(id, name, posteam) %>%
+  filter(week == 2)
+
 caleb_pbp_week_1 <- pbp_25 %>%
   filter(week == 1, name == "C.Williams") %>%
   filter(!is.na(epa)) %>%
@@ -37,8 +41,28 @@ caleb_pbp_week_1 <- pbp_25 %>%
     epa_roll5 = zoo::rollmean(epa, k = 5, fill = NA, align = "right")
   )
 
+caleb_pbp_week_2 <- pbp_25 %>%
+  filter(week == 2, name == "C.Williams") %>%
+  filter(!is.na(epa)) %>%
+  arrange(game_id, desc(game_seconds_remaining), qtr, desc(quarter_seconds_remaining)) %>%
+  mutate(
+    play_index = row_number(),
+    play_cat = case_when(
+      !is.na(sack) & sack == 1 ~ "Sack",
+      !is.na(interception) & interception == 1 ~ "Interception",
+      !is.na(fumble_lost) & fumble_lost == 1 ~ "Fumble Lost",
+      !is.na(pass) & pass == 1 ~ "Pass",
+      !is.na(rush) & rush == 1 ~ "Rush",
+      !is.na(play_type) ~ str_to_title(play_type),
+      TRUE ~ "Other"
+    ),
+    epa_roll5 = zoo::rollmean(epa, k = 5, fill = NA, align = "right")
+  )
+
 caleb_opp <- caleb_pbp_week_1 %>% distinct(defteam) %>% pull(defteam) %>% paste(collapse = "/")
-caleb_game_avg_epa <- mean(caleb_pbp_week_1$epa, na.rm = TRUE)
+caleb_game_avg_epa_week_1 <- mean(caleb_pbp_week_1$epa, na.rm = TRUE)
+caleb_opp <- caleb_pbp_week_2 %>% distinct(defteam) %>% pull(defteam) %>% paste(collapse = "/")
+caleb_game_avg_epa_week_2 <- mean(caleb_pbp_week_2$epa, na.rm = TRUE)
 
 # Label only the most impactful snaps (top-3 & bottom-3 EPA)
 label_candidates <- bind_rows(

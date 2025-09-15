@@ -1,4 +1,4 @@
-# ===== Setup (packages, options, simple config) =====
+# ===== Setup =====
 
 # Loading Packages
 library(tidyverse)
@@ -13,10 +13,10 @@ library(ggrepel)
 library(stringr)
 library(zoo)
 
-# Config you might tweak week-to-week
+# tweak each week
 current_week <- 2
 postseason_week <- 19
 season <- 2025
 
-# Print for visibility
+# Print
 message(glue::glue("Season: {season}, REG week: {current_week}, POST week: {postseason_week}"))

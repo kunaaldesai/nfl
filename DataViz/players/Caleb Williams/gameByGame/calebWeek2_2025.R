@@ -33,7 +33,7 @@ ggplot(caleb_pbp_week_2, aes(x = play_index, y = epa)) +
   ) +
   scale_size_continuous(name = "|EPA|") +
   labs(
-    title = "C.Williams — Play-by-Play EPA (Week 1)",
+    title = "C.Williams — Play-by-Play EPA (Week 2)",
     subtitle = paste0("Opponent: ", caleb_opp_week_2, 
                       "   ·   Dotted = Game avg (", round(caleb_game_avg_epa_week_2, 3), 
                       "),  Dot-dash = 0  ·  Rolling line = 5-play mean"),

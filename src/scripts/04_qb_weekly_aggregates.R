@@ -187,3 +187,8 @@ qb_25_current_week_POST <- pbp_25 %>%
   select(-pr_a, -pr_b, -pr_c, -pr_d) %>%
   filter(attempts_valid > 2) %>%
   arrange(desc(epa_play))
+
+
+# Merge PFR advanced (season) into season table
+qb_weekly_25 <- qb_weekly_25 %>%
+  left_join(qb_adv_weekly_25, by = "name")

@@ -267,7 +267,7 @@ ggplot(data = team_24,
 
 
 
-
+# Caleb Weekly EPA
 ggplot(cw_weekly_plot, aes(x = week, y = epa_play)) +
   geom_line(alpha = 0.7) +
   geom_point(aes(size = dropbacks), alpha = 0.9) +
@@ -294,7 +294,7 @@ ggplot(cw_weekly_plot, aes(x = week, y = epa_play)) +
   theme(legend.position = "bottom")
 
 
-
+# CalebWeekly EPA with Pressure Pct
 ggplot(cw_weekly_plot, aes(x = week, y = epa_play)) +
   geom_line(alpha = 0.7) +
   geom_point(aes(size = dropbacks, color = times_pressured_pct), alpha = 0.9) +
@@ -330,7 +330,7 @@ ggplot(cw_weekly_plot, aes(x = week, y = epa_play)) +
 
 
 
-# ---- Plot ----
+# Jayden Daniels Weekly EPA with Pressure Pct
 ggplot(jw_weekly_plot, aes(x = week, y = epa_play)) +
   geom_line(alpha = 0.7) +
   geom_point(aes(size = dropbacks, color = times_pressured_pct), alpha = 0.9) +
@@ -378,7 +378,7 @@ ggplot(jw_weekly_plot, aes(x = week, y = epa_play)) +
 
 
 
-# ---- Plot ----
+# Aaron Rodgers Weekly EPA with Pressure Pct
 ggplot(ar_weekly_plot, aes(x = week, y = epa_play)) +
   geom_line(alpha = 0.7) +
   geom_point(aes(size = dropbacks, color = times_pressured_pct), alpha = 0.9) +

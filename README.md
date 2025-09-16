@@ -3,7 +3,7 @@
 ## Overview
 This repository centralizes my tooling for analyzing NFL quarterback performance. The
 `src` pipeline automates downloading play-by-play data, normalizing player names,
-and computing season- and week-level efficiency metrics using the
+and computing season and week level efficiency metrics using the
 [`nflverse`](https://nflverse.nflverse.com) family of packages. The `DataViz`
 directory builds on those data frames to produce exploratory plots (CPOE vs. EPA,
 pressure rate comparisons, player-specific weekly trends, and more) that support

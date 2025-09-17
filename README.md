@@ -1,7 +1,7 @@
-# NFL Quarterback Analytics Toolkit
+# NFL Analytics Toolkit
 
 ## Overview
-This repository centralizes my tooling for analyzing NFL quarterback performance. The
+This repository centralizes my tooling for analyzing NFL player performance. The
 `src` pipeline automates downloading play-by-play data, normalizing player names,
 and computing season and week level efficiency metrics using the
 [`nflverse`](https://nflverse.nflverse.com) family of packages. The `DataViz`
@@ -120,6 +120,10 @@ session or when only a subset of data needs to be refreshed.
 │       ├── 03_qb_season_aggregates.R
 │       ├── 04_qb_weekly_aggregates.R
 │       └── 05_caleb_analysis.R
+│       └── 06_wr_season_aggregates.R
+│       └── 07_wr_weekly_aggregates.R
+│       └── 08_rb_season_aggregates.R
+│       └── 09_rb_weekly_aggregates.R
 └── README.md                # Project documentation (this file)
 ```
 
@@ -129,7 +133,7 @@ session or when only a subset of data needs to be refreshed.
   subsequent runs.
 - **Respect API rate limits**: While the nflverse services are robust, avoid
   repeatedly clearing caches and re-downloading in tight loops.
-- **Extend with care**: Add new analytical steps by creating a `src/scripts/06_*` file
+- **Extend with care**: Add new analytical steps by creating a `src/scripts/10_*` file
   and sourcing it from `src/main.R` to keep the pipeline deterministic.
 - **Visualization context**: The scatter plots intentionally mute legends by
   default; toggle them back on if you need them for presentations or exports.

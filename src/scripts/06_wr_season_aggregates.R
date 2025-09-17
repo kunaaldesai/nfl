@@ -2,10 +2,12 @@
 
 wr_25 <- pbp_25 %>%
   filter(season_type == "REG") %>%
-  group_by(id, receiver, posteam) %>%
+  filter(!is.na(receiver_player_name), receiver_player_name != "") %>%
+  group_by(id, receiver_player_name, posteam) %>%
   summarize(
     epa_play = mean(epa, na.rm = TRUE),
     total_epa = sum(epa, na.rm = TRUE),
+    targets = n(),
     yac_epa = mean(yac_epa, na.rm= TRUE),
     total_yac_epa = sum(yac_epa, na.rm = TRUE),
     completed_yac_epa = mean(comp_yac_epa, na.rm = TRUE),
@@ -21,4 +23,5 @@ wr_25 <- pbp_25 %>%
     total_yac = sum(yards_after_catch, na.rm = TRUE),
     avg_yac = mean(yards_after_catch, na.rm = TRUE),
   ) %>%
+  filter(targets >= 5)
   arrange(desc(epa_play))

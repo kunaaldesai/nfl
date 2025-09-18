@@ -3,7 +3,7 @@
 wr_25 <- pbp_25 %>%
   filter(season_type == "REG") %>%
   filter(!is.na(receiver_player_name), receiver_player_name != "") %>%
-  group_by(id, receiver_player_name, posteam) %>%
+  group_by(receiver_player_name, posteam) %>%
   summarize(
     epa_play = mean(epa, na.rm = TRUE),
     total_epa = sum(epa, na.rm = TRUE),

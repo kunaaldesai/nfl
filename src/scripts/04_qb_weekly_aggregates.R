@@ -189,6 +189,6 @@ qb_25_current_week_POST <- pbp_25 %>%
   arrange(desc(epa_play))
 
 
-# Merge PFR advanced (season) into season table
+# Merge PFR advanced (weekly) into weekly table
 qb_weekly_25 <- qb_weekly_25 %>%
   left_join(qb_adv_weekly_25, by = c("name", "week"))

@@ -28,3 +28,62 @@ qb_adv_weekly_25 <- qb_adv_weekly_25 %>%
       TRUE ~ name
     )
   )
+
+# Season-level PFR adv
+wr_adv_25 <- wr_adv_25 %>%
+  mutate(
+    name = normalize_name_vec(player),
+    name = case_when(
+      player == "Amon-Ra St Brown" ~ "A.St. Brown",
+    #  str_detect(player, regex("^C\\.?\\s*J\\.?\\s*Stroud$", ignore_case = FALSE)) ~ "C.Stroud",
+      TRUE ~ name
+    )
+  )
+
+wr_adv_25 <- wr_adv_25 %>%
+  #select(-receiver_player_name) %>%
+  rename(receiver_player_name = name)
+
+
+# Weekly PFR adv
+wr_adv_weekly_25 <- wr_adv_weekly_25 %>%
+  mutate(
+    name = normalize_name_vec(pfr_player_name),
+    name = case_when(
+      pfr_player_name == "Amon-Ra St. Brown" ~ "A.St. Brown",
+    #  str_detect(player, regex("^C\\.?\\s*J\\.?\\s*Stroud$", ignore_case = FALSE)) ~ "C.Stroud",
+      TRUE ~ name
+    )
+  )
+
+wr_adv_weekly_25 <- wr_adv_weekly_25 %>%
+  rename(receiver_player_name = name)
+
+# Season-level PFR adv
+rb_adv_25 <- rb_adv_25 %>%
+  mutate(
+    name = normalize_name_vec(player)
+    #name = case_when(
+    #  player == "Gardner Minshew II" ~ "G.Minshew II",
+    #  str_detect(player, regex("^C\\.?\\s*J\\.?\\s*Stroud$", ignore_case = FALSE)) ~ "C.Stroud",
+    #  TRUE ~ name
+    #)
+  )
+
+rb_adv_25 <- rb_adv_25 %>%
+  rename(rusher_player_name = name)
+
+# Weekly PFR adv
+rb_adv_weekly_25 <- rb_adv_weekly_25 %>%
+  mutate(
+    name = normalize_name_vec(pfr_player_name)
+    #name = case_when(
+    #  pfr_player_name == "Gardner Minshew II" ~ "G.Minshew II",
+    #  str_detect(player, regex("^C\\.?\\s*J\\.?\\s*Stroud$", ignore_case = FALSE)) ~ "C.Stroud",
+    #  TRUE ~ name
+    #)
+  )
+
+
+rb_adv_weekly_25 <- rb_adv_weekly_25 %>%
+  rename(rusher_player_name = name)

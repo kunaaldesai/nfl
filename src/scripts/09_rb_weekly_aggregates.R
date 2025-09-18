@@ -19,3 +19,8 @@ rb_weekly_25 <- pbp_25 %>%
   ) %>%
   filter(rush_attempts >= 5) %>%
   arrange(desc(rush_attempts))
+
+
+# Merge PFR advanced (weekly) into weekly table
+#rb_weekly_25 <- rb_weekly_25 %>%
+#  left_join(rb_adv_weekly_25, by = c("name", "week"))

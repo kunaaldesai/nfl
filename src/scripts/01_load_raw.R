@@ -32,4 +32,83 @@ qb_adv_weekly <- load_pfr_advstats(
   summary_level = c("week")
 )
 
+# PFR advanced WR stats (season + weekly)
+wr_adv_weekly_25 <- load_pfr_advstats(
+  seasons = season,
+  stat_type = c("rec"),
+  summary_level = c("week")
+)
+
+wr_adv_25 <- load_pfr_advstats(
+  seasons = season,
+  stat_type = c("rec"),
+  summary_level = c("season")
+)
+
+wr_adv <- load_pfr_advstats(
+  seasons = TRUE,
+  stat_type = c("rec"),
+  summary_level = c("season")
+)
+
+
+wr_adv_weekly <- load_pfr_advstats(
+  seasons = TRUE,
+  stat_type = c("rec"),
+  summary_level = c("week")
+)
+
+# PFR advanced RB stats (season + weekly)
+rb_adv_weekly_25 <- load_pfr_advstats(
+  seasons = season,
+  stat_type = c("rush"),
+  summary_level = c("week")
+)
+
+rb_adv_25 <- load_pfr_advstats(
+  seasons = season,
+  stat_type = c("rush"),
+  summary_level = c("season")
+)
+
+rb_adv <- load_pfr_advstats(
+  seasons = TRUE,
+  stat_type = c("rush"),
+  summary_level = c("season")
+)
+
+
+rb_adv_weekly <- load_pfr_advstats(
+  seasons = TRUE,
+  stat_type = c("rush"),
+  summary_level = c("week")
+)
+
+# PFR advanced DEF stats (season + weekly)
+def_adv_weekly_25 <- load_pfr_advstats(
+  seasons = season,
+  stat_type = c("def"),
+  summary_level = c("week")
+)
+
+def_adv_25 <- load_pfr_advstats(
+  seasons = season,
+  stat_type = c("def"),
+  summary_level = c("season")
+)
+
+def_adv <- load_pfr_advstats(
+  seasons = TRUE,
+  stat_type = c("def"),
+  summary_level = c("season")
+)
+
+
+def_adv_weekly <- load_pfr_advstats(
+  seasons = TRUE,
+  stat_type = c("def"),
+  summary_level = c("week")
+)
+
+
 

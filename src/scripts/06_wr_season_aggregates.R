@@ -27,3 +27,7 @@ wr_25 <- pbp_25 %>%
   ) %>%
   filter(targets >= 5) %>%
   arrange(desc(targets))
+
+# Merge PFR advanced (season) into season table
+wr_25 <- wr_25 %>%
+  left_join(wr_adv_25, by = "receiver_player_name")

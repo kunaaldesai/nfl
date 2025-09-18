@@ -27,3 +27,7 @@ wr_weekly_25 <- pbp_25 %>%
   ) %>%
   filter(targets >= 1) %>%
   arrange(desc(targets))
+
+# Merge PFR advanced (weekly) into weekly table
+#wr_weekly_25 <- wr_weekly_25 %>%
+#  left_join(wr_adv_weekly_25, by = c("name", "week"))

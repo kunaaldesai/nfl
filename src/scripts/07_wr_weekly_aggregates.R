@@ -1,9 +1,9 @@
 # ===== Season WR aggregates (REG only) + merge adv =====
 
-wr_25 <- pbp_25 %>%
+wr_weekly_25 <- pbp_25 %>%
   filter(season_type == "REG") %>%
   filter(!is.na(receiver_player_name), receiver_player_name != "") %>%
-  group_by(id, receiver_player_name, posteam) %>%
+  group_by(week, id, receiver_player_name, posteam, defteam) %>%
   summarize(
     epa_play = mean(epa, na.rm = TRUE),
     total_epa = sum(epa, na.rm = TRUE),
@@ -25,5 +25,5 @@ wr_25 <- pbp_25 %>%
     rec_touchdown = sum(pass_touchdown, na.rm = TRUE),
     avg_rec_touchdown = mean(pass_touchdown, na.rm = TRUE)
   ) %>%
-  filter(targets >= 5) %>%
+  filter(targets >= 1) %>%
   arrange(desc(targets))

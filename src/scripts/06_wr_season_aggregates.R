@@ -30,4 +30,4 @@ wr_25 <- pbp_25 %>%
 
 # Merge PFR advanced (season) into season table
 wr_25 <- wr_25 %>%
-  left_join(wr_adv_25, by = "receiver_player_name")
+  left_join(wr_adv_25, by = c("receiver_player_name", "posteam"))

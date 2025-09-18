@@ -42,7 +42,8 @@ wr_adv_25 <- wr_adv_25 %>%
 
 wr_adv_25 <- wr_adv_25 %>%
   #select(-receiver_player_name) %>%
-  rename(receiver_player_name = name)
+  rename(receiver_player_name = name) %>%
+  rename(posteam = tm)
 
 
 # Weekly PFR adv
@@ -72,6 +73,9 @@ rb_adv_25 <- rb_adv_25 %>%
 
 rb_adv_25 <- rb_adv_25 %>%
   rename(rusher_player_name = name)
+
+rb_adv_25 <- rb_adv_25 %>%
+  rename(posteam = tm)
 
 # Weekly PFR adv
 rb_adv_weekly_25 <- rb_adv_weekly_25 %>%

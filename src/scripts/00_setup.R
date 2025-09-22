@@ -14,7 +14,7 @@ library(stringr)
 library(zoo)
 
 # tweak each week
-current_week <- 2
+current_week <- 3
 postseason_week <- 19
 season <- 2025
 
